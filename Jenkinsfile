@@ -20,7 +20,7 @@ pipeline {
                 branch 'development'
             }
             steps {
-                sh './jenkins/scripts/deliver-for-development'
+                sh './jenkins/scripts/deliver-for-development.sh'
                 input message: 'Finsihed using website, (Click "Proceed" to continue)'
                 sh '/.jenkins/scripts/kill.sh'
             }
@@ -30,7 +30,7 @@ pipeline {
                 branch 'production'
             }
             steps {
-                sh './jenkins/scripts/deploy-for-production'
+                sh './jenkins/scripts/deploy-for-production.sh'
                 input message: 'Finsihed using website, (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
